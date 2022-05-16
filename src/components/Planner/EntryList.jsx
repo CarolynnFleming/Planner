@@ -1,14 +1,15 @@
 import Entry from './EntryItem';
 import styles from './EntryList.css';
+import { parseDate } from '../../utils/parseDate'
 
 export default function Entries() {
   // TODO: Replace with the entries stored in PlannerContext
   const entries = [
     {
       id: 0,
-      title: 'Replace me!',
-      content: '`content` should only be visible on the detail view',
-      date: new Date()
+      title: 'Start Planning',
+      content: 'I should write in my planner',
+      date: parseDate(new Date()),
     },
   ];
 
