@@ -1,17 +1,18 @@
 import Entry from './EntryItem';
 import styles from './EntryList.css';
-import { parseDate } from '../../utils/parseDate'
+import { useEntries } from '../../context/PlannerContext';
 
 export default function Entries() {
   // TODO: Replace with the entries stored in PlannerContext
-  const entries = [
-    {
-      id: 0,
-      title: 'Start Planning',
-      content: 'I should write in my planner',
-      date: parseDate(new Date()),
-    },
-  ];
+  // const entries = [
+  //   {
+  //     id: 0,
+  //     title: 'Start Planning',
+  //     content: 'I should write in my planner',
+  //     date: parseDate(new Date()),
+  //   },
+  // ];
+  const { entries } = useEntries();
 
   return (
     <ul className={styles.list}>
