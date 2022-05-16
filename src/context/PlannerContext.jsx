@@ -58,13 +58,10 @@ const PlannerProvider = ({ children }) => {
     dispatch({ type: 'update', payload: entry });
     return entry;
   };
-  const deleteEntry = (entry) => {
-    const payload = {
-      ...entry,
-      date: parseDate(entry.date),
-    };
-    dispatch({ type: 'create', payload });
-    return payload;
+  const deleteEntry = async (id) => {
+    const entry = getEntry(id);
+    dispatch({ type: 'delete', payload: { id } });
+    return entry;
   };
 
   return (
@@ -73,6 +70,8 @@ const PlannerProvider = ({ children }) => {
         entries,
         addEntry,
         getEntry,
+        updateEntry,
+        deleteEntry,
       }}
     >
       {children}
