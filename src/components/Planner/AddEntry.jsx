@@ -3,6 +3,7 @@ import { useForm } from '../../hooks/useForm';
 import styles from './AddEntry.css';
 
 export default function AddEntry() {
+  // console.log(addEntry)
   const { addEntry } = useEntries();
   const { formState, formError, handleFormChange, setFormError } = useForm({
     title: '',
