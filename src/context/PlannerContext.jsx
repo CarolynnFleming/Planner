@@ -54,6 +54,18 @@ const PlannerProvider = ({ children }) => {
   const getEntry = (id) => {
     return entries.find((note) => note.id === Number(id));
   };
+  const updateEntry = async (entry) => {
+    dispatch({ type: 'update', payload: entry });
+    return entry;
+  };
+  const deleteEntry = (entry) => {
+    const payload = {
+      ...entry,
+      date: parseDate(entry.date),
+    };
+    dispatch({ type: 'create', payload });
+    return payload;
+  };
 
   return (
     <PlannerContext.Provider
